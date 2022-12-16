@@ -1,0 +1,23 @@
+{
+  "name": "phase-1-project",
+  "version": "1.0.0",
+  "description": "Independent project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Musyoki-Wambua/phase-1-project.git"
+  },
+  "keywords": [
+    "Superhero",
+    "project"
+  ],
+  "author": "Joseph Wambua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Musyoki-Wambua/phase-1-project/issues"
+  },
+  "homepage": "https://github.com/Musyoki-Wambua/phase-1-project#readme"
+}
