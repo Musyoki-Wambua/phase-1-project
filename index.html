@@ -9,18 +9,142 @@
     <link rel="stylesheet" href="./main css/style.css">
 </head>
 <body>
+    <div class="main-wrapper">
+      <div class="app">
+        <div class=" app-header">
+          <h1 class="app-title">SuperHero Database</h1>
+          <form class="app-header-search">          
+              <input type="text" placeholder="Search for a hero...">
+              <button type="submit" class="search-btn"> 
+                <div class="search-list" id="search-list">
+                  <div class="search-list-item">
+                    <img src="./assets/Batman1.jpeg" alt="Your Worst Nightmare">
+                  <p>Batman</p>
+                  </div>                 
+                </div>
+              </form>
+        </div>
+
+        <div class="app-body">
+          <div class="app-body-content">
+            <div class="app-body-content-thumbnail">
+              <img src="./assets/Batman1.jpeg" alt="">
+            </div>
+            <div class="app-body-content-list">
+              <div class="name">Batman</div>
+
+              <div class="app-body-tabs-head">
+                <button type="button" class="tab-head-single" data-id="1"> <span>Powerstats</span></button>
+                <button type="button" class="tab-head-single" data-id="2"> <span>Biography</span></button>
+                <button type="button" class="tab-head-single" data-id="3"> <span>Apperance</span></button>
+                <button type="button" class="tab-head-single" data-id="4"> <span>Connections</span></button>                
+              </div>
+
+              <div class="app-body-tabs-body">
+                <ul class="tabs-body-single powerstats">
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      <span>Intelligence</span>
+                    </div>
+                    <span>100</span>
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      <span>Strength</span>
+                    </div>
+                    <span>26</span>
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      <span>Speed</span>
+                    </div>
+                    <span>27</span>
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      <span>Durability</span>
+                    </div>
+                    <span>50</span>
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      <span>Power</span>
+                    </div>
+                    <span>47</span>
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      <span>Combat</span>
+                    </div>
+                    <span>100</span>
+                  </li>
+                </ul>
+                <ul class="tab-body-single-biography">
+                  <li>
+                    <span>Full Name</span>
+                    <span>Terry McGinnis</span>
+                  </li>
+                  <li>
+                    <span>Alert-egos</span>
+                    <span>No alter egos found</span>
+                  </li>
+                  <li>
+                    <span>Aliases</span>
+                    <span>Batman II, The Tommorow Knight, Batman Beyond</span>
+                  </li>
+                  <li>
+                    <span>Place of Birth</span>
+                    <span>Gotham City, 25th Centrury</span>
+                  </li>
+                  <li>
+                    <span>First appeareance</span>
+                    <span>Batman Beyond #1</span>
+                  </li>
+                  <li>
+                    <span>Publisher</span>
+                    <span>DC Comics</span>
+                  </li>
+                </ul>
+                <ul class="tab-body-single-appearance">
+                  <li>
+                    <span><i class="fas fa-star"></i>Gender</span>
+                    <span>Male</span>
+                  </li>
+                  <li>
+                    <span><i class="fas fa-star"></i>Race</span>
+                    <span>Human</span>
+                  </li>             
+                 </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
    
     <!-- Search Form -->
-    <form id="search-form">
-      <input type="text" placeholder="Search for a hero...">
-      <button type="submit">Search</button>
-    </form>
+   
 
     <!-- Authentication Form -->
-    <form id="auth-form">
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <button type="submit">Log In</button>
+    <div id="login-form">
+      <form>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Submit">
+      </form> 
+    </div>
+
+
     </form>
 
     <!-- Biography Form -->
