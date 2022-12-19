@@ -61,14 +61,20 @@ h2{
   text-align: center;
   clear: both;
   position: absolute;
-  top: 200px;
+  margin-top: rem;
 }
 #textDescription{
   position: absolute;
   margin-bottom: 1.5em;
-  margin-top: 20%;
+  margin-top: 500px;
   text-align: center;
-  display: inline-block;
+  font-stretch: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+          line-clamp: 2;
+  -webkit-box-orient: vertical;
 
 }
 #characterImage{
@@ -77,3 +83,19 @@ h2{
   flex: 33.33%;
   float: left;
 }
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 400px;
+  height: 200px;
+}
+img {
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+

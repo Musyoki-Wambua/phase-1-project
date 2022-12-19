@@ -1,18 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const character = {
-    name: "Spider-Man",
-    description: "Spider-Man is a superhero who fights crime in New York City.",
-    thumbnail: {
-      path: "https://www.sideshow.com/storage/product-images/500985FBLK/the-amazing-spider-man-800_marvel_feature.jpg",
-      extension: "jpg",
-    },
-  };
-
+ 
   const loginForm = document.getElementById("login");
+  const loginButton = document.getElementById('login-button');
+  const loginPopup = document.getElementById('login-popup')
+  loginButton.addEventListener('click', () => {
+    loginPopup.style.display = 'block';
+  });
 
   //trigger event listner that get email and password values
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    console.log('Form submitted')
 
     // Check if the form has already been submitted
     if (loginForm.style.display === "none") {
@@ -24,11 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = loginForm.elements.password.value;
 
     if (email == "test@example.com" && password == "password") {
-      alert("LOGIN SUCESSFUL!!");
-    } else alert("LOGIN SUCESSFUL!!");
+      alert("LOGIN SUCCESSFUL!!");
+    } else alert("LOGIN UNSUCCESSFUL!!");
 
     //after login is done, form is closed
     loginForm.style.display = "none";
+    loginPopup.style.display = "none";
   });
 
   // Get the search form element
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
           location.reload();
         });
       }
-      
+
         for (let i = 0; i < filteredResults.length; i++) {
           renderCharacter(filteredResults[i]);
         }
