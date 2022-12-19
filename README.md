@@ -8,7 +8,9 @@
 
  This is an application that allows users to search and view their favouirte superheroes.
 
-## Live LInk
+## Live Link
+
+        https://musyoki-wambua.github.io/phase-1-project/
 
 ## User Story
 
