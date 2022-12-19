@@ -52,3 +52,28 @@ button[type="submit"] {
   display: flex;
   justify-content: center;
 }
+#character-list {
+  margin-top: 20px;
+  display: flex;
+  width: 800px;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+h2{
+  text-align: center;
+  clear: both;
+  position: absolute;
+  top: 200px;
+}
+#textDescription{
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 1.5em;
+}
+#characterImage{
+  clear: both;
+  display: flex;
+  flex: 33.33%;
+  float: left;
+}
