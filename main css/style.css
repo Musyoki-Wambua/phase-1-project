@@ -1,13 +1,10 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #cccccc;
-  /* background-image: url(https://i.annihil.us/u/prod/marvel/images/OpenGraph-TW-1200x630.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat; */
 }
 .container {
   margin: auto;
+  position: relative;
 }
 #landing-page {
   text-align: center;
@@ -68,8 +65,11 @@ h2{
 }
 #textDescription{
   position: absolute;
-  border-style: solid;
   margin-bottom: 1.5em;
+  margin-top: 20%;
+  text-align: center;
+  display: inline-block;
+
 }
 #characterImage{
   clear: both;

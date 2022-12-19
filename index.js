@@ -81,11 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
         characterListContainer.innerHTML = `<button id="back-button">Back</button>`;
         const backButton = document.getElementById("back-button");
         backButton.addEventListener("click", () => {
-          location.reload();          
-});
+          location.reload();
+        });
       }
-
-
+      
         for (let i = 0; i < filteredResults.length; i++) {
           renderCharacter(filteredResults[i]);
         }
