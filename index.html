@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperHero Database</title>
-    <link rel="stylesheet" href="./main css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="./main css/bootstrap.css"> -->
     <link rel="stylesheet" href="./main css/style.css">
 </head>
 <body>
@@ -32,15 +32,31 @@
         </div>
   
         <!-- Biography Form -->
-    
-        <form id="bio-form">
-          <div id="biography-page" style="display: none;">
-            <h1 id="hero-name"></h1>
-            <p id="hero-description"></p>
-            <button id="back-button">Back</button>
+        <div class="container-fluid">
+          <div class="card-img" id="character-container">
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784/portrait_incredible.jpg" alt="">
+            <div class="row">
+              <div class="column">
+                <div class="card col-3">
+                  <form id="bio-form">
+                    <div id="biography-page" style="display: none;">
+                      <h1 id="hero-name"></h1>
+                      <p id="hero-description"></p>
+                      <button id="back-button">Back</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-        </form>
+        </div>        
   </div> 
+
+  <footer class="footer">
+    <div class="container">
+      <p id="text-footer"></p>
+    </div>
+  </footer>
 </body>
-<script src="./index.js></script>
+<script src="./index.js"></script>
 </html>
