@@ -103,14 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
     characterDiv.style.clear = "left";
 
     // Add the character name to the div element
-    characterDiv.innerHTML = `<h2>${character.name}</h2>`;
+    characterDiv.innerHTML = `<h2 class= "heading">${character.name}</h2>`;
 
-    // Add the character image to the div element
-    characterDiv.innerHTML += `<img id= "characterImage"src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="${character.name}" style="float:left; width: 400px; height: 400px;">`;
-
-    // Add the character description to the div element
-    characterDiv.innerHTML += `<p id='textDescription' >${character.description}</p>`;
-
+    // Create a wrapper div element to contain the character image and description
+    const wrapperDiv = document.createElement("div");
+    wrapperDiv.style.clear = "left";
+  
+    // Add the character image to the wrapper div element
+    wrapperDiv.innerHTML += `<img id= "characterImage"src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="${character.name}";">`;
+  
+    // Add the character description to the wrapper div element
+    wrapperDiv.innerHTML += `<p id='textDescription' >${character.description}</p>`;
+  
+    // Append the wrapper div to the character div
+    characterDiv.appendChild(wrapperDiv);
+  
     // Append the character div to the character list container
     characterListContainer.appendChild(characterDiv);
   }
