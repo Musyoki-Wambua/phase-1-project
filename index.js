@@ -87,6 +87,8 @@ function searchCharacters(searchQuery) {
       // Create a new div element to contain the character data
       const characterDiv = document.createElement("div");
       characterDiv.classList.add("character");
+      characterDiv.style.width= '400px';
+      characterDiv.style.height= '400px';
 
       // Add the character name to the div element
       characterDiv.innerHTML = `<h2>${character.name}</h2>`;
@@ -99,6 +101,13 @@ function searchCharacters(searchQuery) {
     
       // Append the character div to the character list container
       characterListContainer.appendChild(characterDiv);
+
+      const container = document.querySelector('.character-container');
+      const characterWidth = 200;
+      const containerWidth = container.offsetWidth;
+      const characterPerRow = math.floor(containerWidth/characterWidth);
+      const containerHeight = math.cell(character.length/ charcterPerRow) * characterWidth;
+      container,style.height = `${containerHeight} px`;
     }renderCharacter()
 
 });
