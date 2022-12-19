@@ -44,4 +44,4 @@
 ## License
 
 - This project is licensed undeer Apache 2.0
-- Copyright (c) 2019 **Joseph Wambua**
+- Copyright (c) 2022 **Joseph Wambua**
