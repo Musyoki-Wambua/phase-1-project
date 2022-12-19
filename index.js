@@ -1,11 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  const character = {
+    name: "Spider-Man",
+    description: "Spider-Man is a superhero who fights crime in New York City.",
+    thumbnail: {
+      path: "https://www.sideshow.com/storage/product-images/500985FBLK/the-amazing-spider-man-800_marvel_feature.jpg",
+      extension: "jpg"
+    }
+  };
+
   const loginForm = document.getElementById("login");
 
   //trigger event listner that get email and password values
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
+     // Check if the form has already been submitted
+  if (loginForm.style.display === "none") {
+    // If the form has already been submitted, do nothing
+    return;
+  }
     //get email and password values
     const email = loginForm.elements.email.value;
     const password = loginForm.elements.password.value;
@@ -34,11 +48,9 @@ const searchInput = document.getElementById('search-input');
     // Clear the search input element
     searchInput.value = "";
 
-
   // Search for characters matching the search query
   searchCharacters(searchQuery);
 });
-
 
   // Search for characters matching the search query
 function searchCharacters(searchQuery) {
@@ -67,13 +79,15 @@ function searchCharacters(searchQuery) {
       }
     })
   }
+      //render a character
     function renderCharacter(character) {
       // Get the character list container element
       const characterListContainer = document.getElementById("character-list");
     
       // Create a new div element to contain the character data
       const characterDiv = document.createElement("div");
-    
+      characterDiv.classList.add("character");
+
       // Add the character name to the div element
       characterDiv.innerHTML = `<h2>${character.name}</h2>`;
     

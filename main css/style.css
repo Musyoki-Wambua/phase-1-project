@@ -1,83 +1,54 @@
 body {
-  background-color: #cccccc;    background-image: url(https://i.annihil.us/u/prod/marvel/images/OpenGraph-TW-1200x630.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  background-color: #cccccc;
+  /* background-image: url(https://i.annihil.us/u/prod/marvel/images/OpenGraph-TW-1200x630.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat; */
 }
-.card-img{
-  flex: auto;
+.container {
   margin: auto;
-  border-radius: 10px;
-  padding: 20px;
-  image-rendering: auto;
+}
+#landing-page {
   text-align: center;
 }
-.container{
-  margin: auto;
-
+#search-form {
+  display: inline-block;
+  margin-top: 20px;
 }
-body {
-    font-family: Arial, sans-serif;
-  }
-  
-  #landing-page {
-    text-align: center;
-  }
-  
-  #search-form {
-    display: inline-block;
-    margin-top: 20px;
-  }
-  
-  #search-input {
-    width: 300px;
-    height: 30px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button[type="submit"] {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #biography-page {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  #hero-name {
-    margin-top: 20px;
-    font-size: 30px;
-  }
-  
-  #hero-description {
-    margin: 20px 0;
-  }
-  
-  #back-button {
-    margin-top: 20px;
-    padding: 5px 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #login-form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid black;
-    display: none;
-  }  
+
+#search-input {
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid burlywood;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#biography-page {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#hero-name {
+  margin-top: 20px;
+  font-size: 30px;
+}
+#hero-description {
+  margin: 20px 0;
+}
+.character {
+  display: flex;
+  justify-content: center;
+}
