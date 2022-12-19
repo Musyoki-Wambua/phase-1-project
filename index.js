@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const loginForm = document.getElementById("login-form");
+  const loginForm = document.getElementById("login");
 
   //trigger event listner that get email and password values
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     //get email and password values
-    const email = loginForm.target.email.value;
-    const password = loginForm.target.password.value;
+    const email = loginForm.elements.email.value;
+    const password = loginForm.elements.password.value;
 
     if (email == "test@example.com" && password == "password") {
       alert("LOGIN SUCESSFUL!!");
@@ -26,7 +26,7 @@ searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   // Get the search input value
-const searchInput = document.getElementById ('search-input');
+const searchInput = document.getElementById('search-input');
 
   // Get the search query from the search input element
   const searchQuery = searchInput.value;
@@ -37,19 +37,19 @@ const searchInput = document.getElementById ('search-input');
 
   // Search for characters matching the search query
   searchCharacters(searchQuery);
-
-  const searchUrl = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchInput}&ts=1&apikey=b38c9d8d4620433cb70fe81c8f2fda8e&hash=5302dfea25f63a3f3b06c96ba8df6571`;
+});
 
 
   // Search for characters matching the search query
 function searchCharacters(searchQuery) {
-
+  const searchUrl = (`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchQuery}&ts=1&apikey=fbba092e440b12f9973140191f427182&hash=3760cd56b1bf07ff1707f3c7b0092c3d`);
+  
   // Fetch characters from the Marvel API
   fetch(searchUrl)
     .then((response) => response.json())
     .then((data) => {
       // Get the results array from the data object
-      let results = data.data.results;
+      const results = data.data.results;
 
       // Filter the results by the search query
       const filteredResults = results.filter((character) => {
@@ -59,8 +59,32 @@ function searchCharacters(searchQuery) {
       });
 
       // Clear the character list container
-      const characterListContainer = document.getElementById('character-list')
+      const characterListContainer = document.getElementById('character-list');
+      characterListContainer.innerHTML = "";
+      
+      for (let i = 0; i < filteredResults.length; i++) {
+        renderCharacter(filteredResults[i]);
+      }
     })
   }
-})  
+    function renderCharacter(character) {
+      // Get the character list container element
+      const characterListContainer = document.getElementById("character-list");
+    
+      // Create a new div element to contain the character data
+      const characterDiv = document.createElement("div");
+    
+      // Add the character name to the div element
+      characterDiv.innerHTML = `<h2>${character.name}</h2>`;
+    
+      // Add the character description to the div element
+      characterDiv.innerHTML += `<p>${character.description}</p>`;
+    
+      // Add the character image to the div element
+      characterDiv.innerHTML += `<img src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="${character.name}" style="width: 400px; height: 400px;">`;
+    
+      // Append the character div to the character list container
+      characterListContainer.appendChild(characterDiv);
+    }renderCharacter()
+
 });
