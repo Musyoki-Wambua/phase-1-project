@@ -52,16 +52,30 @@ function renderCharacter(character) {
   
   // Create a new character list element
   const characterList = document.createElement('div');
+  // characterList.id = 'character-list-' + results.id
   characterList.classList.add('character-list');
   characterList.innerText = character.name;
+  characterList.style.cursor = 'pointer'
   
   // Append the character list element to the character container
   characterContainer.appendChild(characterList);
   
   // Add a click event listener to the character list element
   characterList.addEventListener('click', () => {
-    characterSelected = character;
+    // Get the name display element
+    const nameDisplay = document.getElementById('name-display');
+    
+    // Set the text of the name display element to the character's name
+    nameDisplay.innerText = character.name;
+
+      // Get the image display element
+      const imageDisplay = document.getElementById('image-display');
+    
+      // Set the src of the image display element to the character's image URL
+      imageDisplay.src = character.thumbnail.path + "." + character.thumbnail.extension;
+      display.style.cursor = 'pointer'
   });  
+
 }
 
 // Fetch and render the characters when the page loads
