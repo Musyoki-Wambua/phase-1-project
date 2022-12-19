@@ -7,7 +7,6 @@ body {
 .card-img{
   flex: auto;
   margin: auto;
-  border: 5px solid;
   border-radius: 10px;
   padding: 20px;
   image-rendering: auto;

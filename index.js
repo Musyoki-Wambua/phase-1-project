@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const loginForm = document.getElementById("login-form");
 
-  //trigger event listner that get email adn password values
+  //trigger event listner that get email and password values
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -17,72 +18,49 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.style.display = "none";
   });
 
-  const publicKey = "b38c9d8d4620433cb70fe81c8f2fda8e";
-  const privateKey = "495c242bcacbbdc5214e22b0eea0ff4e99a21f6e";
+// Get the search form element
+const searchForm = document.getElementById('search-form');
 
-  const timestamp = "1";
-  //const hash = md5(timestamp + privateKey + publicKey);
+// Add a submit event listener to the search form
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-  const endpoint = "https://gateway.marvel.com/v1/public/characters";
-  //const params = `apikey=${publicKey}&ts=${timestamp}&hash=${hash}`;
-  
-  //const url = `${endpoint}?${params}`;
+  // Get the search input value
+const searchInput = document.getElementById ('search-input');
+
+  // Get the search query from the search input element
+  const searchQuery = searchInput.value;
+
+    // Clear the search input element
+    searchInput.value = "";
 
 
-// Fetch characters from the Marvel API
-function fetchCharacters() {
-  fetch('https://gateway.marvel.com/v1/public/characters?ts=1&apikey=b38c9d8d4620433cb70fe81c8f2fda8e&hash=5302dfea25f63a3f3b06c96ba8df6571')
+  // Search for characters matching the search query
+  searchCharacters(searchQuery);
+
+  const searchUrl = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchInput}&ts=1&apikey=b38c9d8d4620433cb70fe81c8f2fda8e&hash=5302dfea25f63a3f3b06c96ba8df6571`;
+
+
+  // Search for characters matching the search query
+function searchCharacters(searchQuery) {
+
+  // Fetch characters from the Marvel API
+  fetch(searchUrl)
     .then((response) => response.json())
     .then((data) => {
       // Get the results array from the data object
       let results = data.data.results;
 
-      // Iterate over the results and render each character
-      for (let i = 0; i < results.length; i++) {
-        renderCharacter(results[i]);
-      }
+      // Filter the results by the search query
+      const filteredResults = results.filter((character) => {
+
+        // Check if the character's name includes the search query
+        return character.name.toLowerCase().includes(searchQuery.toLowerCase());
+      });
+
+      // Clear the character list container
+      const characterListContainer = document.getElementById('character-list')
     })
-    //.catch((error) => console.error(error));
-}
-
-// Render a single character
-function renderCharacter(character) {
-  // Get the character container element
-  const characterContainer = document.getElementById('character-container');
-  
-  // Create a new character list element
-  const characterList = document.createElement('div');
-  // characterList.id = 'character-list-' + results.id
-  characterList.classList.add('character-list');
-  characterList.innerText = character.name;
-  characterList.style.cursor = 'pointer'
-  
-  // Append the character list element to the character container
-  characterContainer.appendChild(characterList);
-  
-  // Add a click event listener to the character list element
-  characterList.addEventListener('click', () => {
-    // Get the name display element
-    const nameDisplay = document.getElementById('name-display');
-    
-    // Set the text of the name display element to the character's name
-    nameDisplay.innerText = character.name;
-
-      // Get the image display element
-      const imageDisplay = document.getElementById('image-display');
-    
-      // Set the src of the image display element to the character's image URL
-      imageDisplay.src = character.thumbnail.path + "." + character.thumbnail.extension;
-      display.style.cursor = 'pointer'
-  });  
-
-}
-
-// Fetch and render the characters when the page loads
-fetchCharacters();
-
-  
- 
-   
+  }
+})  
 });
-

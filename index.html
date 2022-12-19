@@ -15,7 +15,7 @@
           <h1>Welcome to the Hero Search</h1>
           <p>Use the search form below to find your favorite heroes and personalities</p>
           <form id="search-form">
-            <input type="text" id="search-input" placeholder="Search heroes">
+            <input type="text" id="searchInput" placeholder="Search heroes">
             <button type="submit">Search</button>
           </form>
         </div>      
@@ -33,22 +33,24 @@
   
         <!-- Biography Form -->
         <div class="container-fluid">
-          <div class="card-img" id="character-container">
-            <img id="image-display" src="" alt="">
-            <div class="row" id="name-display">
-              <div class="column" >
-                <div class="card col-3">
-                  <form id="bio-form">
-                    <div id="biography-page" style="display: none;">
-                      <h1 id="hero-name"></h1>
-                      <p id="hero-description"></p>
-                      <button id="back-button">Back</button>
-                    </div>
-                  </form>
+          <div  id="character-list-container" >
+            <div class="card-img" id="character-container">
+              <img id="image-display" src="" alt="">
+              <div class="row" id="name-display">
+                <div class="column" >
+                  <div class="card col-3">
+                    <form id="bio-form">
+                      <div id="biography-page" style="display: none;">
+                        <h1 id="hero-name"></h1>
+                        <p id="hero-description"></p>
+                        <button type="button" class="btn btn-dark">Back</button>                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
         </div>        
   </div> 
 
