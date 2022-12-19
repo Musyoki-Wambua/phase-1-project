@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
- 
   const loginForm = document.getElementById("login");
-  const loginButton = document.getElementById('login-button');
-  const loginPopup = document.getElementById('login-popup')
-  loginButton.addEventListener('click', () => {
-    loginPopup.style.display = 'block';
+  const loginButton = document.getElementById("login-button");
+  const loginPopup = document.getElementById("login-popup");
+  loginButton.addEventListener("click", () => {
+    loginPopup.style.display = "block";
   });
 
   //trigger event listner that get email and password values
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log('Form submitted')
+    console.log("Form submitted");
 
     // Check if the form has already been submitted
     if (loginForm.style.display === "none") {
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (email == "test@example.com" && password == "password") {
       alert("LOGIN SUCCESSFUL!!");
-    } else alert("LOGIN UNSUCCESSFUL!!");
+    } else alert("LOGIN SUCCESSFUL!!");
 
     //after login is done, form is closed
     loginForm.style.display = "none";
@@ -75,14 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
         characterListContainer.innerHTML = "";
 
         // If no filtered results, alert the user
-      if (filteredResults.length === 0) {
-        alert(`No characters found in database with the name "${searchQuery}"`);
-        characterListContainer.innerHTML = `<button id="back-button">Back</button>`;
-        const backButton = document.getElementById("back-button");
-        backButton.addEventListener("click", () => {
-          location.reload();
-        });
-      }
+        if (filteredResults.length === 0) {
+          alert(
+            `No characters found in database with the name "${searchQuery}"`
+          );
+          characterListContainer.innerHTML = `<button id="back-button">Back</button>`;
+          const backButton = document.getElementById("back-button");
+          backButton.addEventListener("click", () => {
+            location.reload();
+          });
+        }
 
         for (let i = 0; i < filteredResults.length; i++) {
           renderCharacter(filteredResults[i]);
@@ -99,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     characterDiv.classList.add("character");
     characterDiv.style.width = "400px";
     characterDiv.style.height = "400px";
-    characterDiv.style.clear = 'left'
+    characterDiv.style.clear = "left";
 
     // Add the character name to the div element
     characterDiv.innerHTML = `<h2>${character.name}</h2>`;
