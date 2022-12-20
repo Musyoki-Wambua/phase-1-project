@@ -2,9 +2,14 @@ body {
   font-family: Arial, sans-serif;
   background-color: #cccccc;
 }
-.container {
+.container-fluid{
+  height: fit-content;
+  width: fit-content;
   margin: auto;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 #landing-page {
   text-align: center;
@@ -16,10 +21,11 @@ body {
 
 #search-input {
   width: 300px;
-  height: 30px;
+  height: 40px;
   padding: 5px;
   border: 1px solid burlywood;
-  border-radius: 5px;
+  border-radius: 25px;
+  text-align: center;
 }
 
 button[type="submit"] {
@@ -29,6 +35,8 @@ button[type="submit"] {
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: large;
+  border-radius: 100px;
   cursor: pointer;
 }
 
@@ -60,39 +68,39 @@ button[type="submit"] {
 h2{
   text-align: center;
   clear: both;
+  display: inline-block;
   position: absolute;
   margin-top: rem;
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  margin-top: 90px;
 }
 #textDescription{
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 1.5em;
   margin-top: 500px;
   text-align: center;
-  font-stretch: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-          line-clamp: 2;
-  -webkit-box-orient: vertical;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
 
 }
 #characterImage{
+  opacity: 1;
+  object-fit: fill;
   clear: both;
-  display: flex;
+  display:block;
   flex: 33.33%;
   float: left;
-  width: 400px;
-  height: 400px;
+  width: 100%x;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
+  background: #ffff;
   padding: 20px;
   border: 1px solid #ccc;
   width: 400px;
@@ -102,8 +110,8 @@ img {
   margin-top: 60px;
   margin-bottom: 10px;
   border: 5px black;
-  padding: 10px;
-  border-radius: 30%;
+  padding: 20px;
+  border-radius: 10%;
   width: 70%;
   height: 80%;
 }
@@ -112,5 +120,40 @@ img {
   backdrop-filter: blur(5px);
   width: auto;
   height: auto;
+}
+.character img {
+  width: 400px;
+  height: 400px;
+  float: left;
+}
+/* .image-container:hover #characterImage  {
+  opacity: 0.3;
+} */
+.wrapperDiv {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;  
+}
+#back-button{
+  position: absolute;
+  border-radius: 10px;
+  border: 3px black solid;
+  padding: 10px;
+  background-color: maroon;
+  margin-top: 75px;
+  color: white;
+  width: 100px;
+}
+.character-div{
+  object-fit: contain;
+}
+.image-caption{
+  text-align: center;
+  color: white;
 }
 

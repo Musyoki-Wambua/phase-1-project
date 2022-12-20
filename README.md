@@ -10,7 +10,7 @@
 
 ## Live Link
 
-        https://musyoki-wambua.github.io/phase-1-project/
+      [click to open page](https://musyoki-wambua.github.io/phase-1-project/) 
 
 ## User Story
 
