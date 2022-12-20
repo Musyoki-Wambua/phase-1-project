@@ -91,21 +91,6 @@ function searchCharacters(searchQuery) {
       }
     });
 }
-
-// // Add the hover effect to the character image
-// function addHoverEffect(characterImage) {
-
-//   const imageCaption =characterImage.nextElementSibling;
-
-//   // Add the mouseenter and mouseleave event listeners to the character image
-//   characterImage.addEventListener("mouseenter", () => {
-//     imageCaption.style.display = "block";
-//   });
-//   characterImage.addEventListener("mouseleave", () => {
-//     imageCaption.style.display = "none";
-//   });
-// }
-
 // Render the character data on the page
 function renderCharacter(character) {
   // Get the character list container element
@@ -126,7 +111,7 @@ function renderCharacter(character) {
 
   // Create a wrapper div element to contain the character image and description
   const wrapperDiv = document.createElement("div");
-  wrapperDiv.style.clear = "left";
+  // wrapperDiv.style.clear = "left";
 
   // Add the character image to the wrapper div 
   wrapperDiv.innerHTML += `<img id= "characterImage"src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="${character.name}" style="float:left; width: 400px; height: 400px;">`;
@@ -141,7 +126,7 @@ function renderCharacter(character) {
   if (character.description) {
     imageCaption.innerText = character.description;
   } else {
-    imageCaption.innerText = `No description available`;
+    imageCaption.innerText = `Description not available`;
   }
   imageCaption.style.display = "block";
 
@@ -158,9 +143,6 @@ function renderCharacter(character) {
 
   // Get the character image element
   const characterImage = wrapperDiv.querySelector("#characterImage");
-
-  // // Add the hover effect to the character image
-  // addHoverEffect(characterImage)
 
   // Append the wrapper div to the character div
   characterDiv.appendChild(wrapperDiv);
