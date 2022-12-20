@@ -10,8 +10,7 @@
 
 ## Live Link
 
-      [click to open page](https://musyoki-wambua.github.io/phase-1-project/) 
-
+ [Click to open Page]( https://musyoki-wambua.github.io/phase-1-project/)
 ## User Story
 
 - A user can search for their various characters that pique their interest.
