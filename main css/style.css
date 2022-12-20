@@ -3,8 +3,8 @@ body {
   background-color: #cccccc;
 }
 .container-fluid{
-  height: fit-content;
-  width: fit-content;
+  height: 100vh;
+  width: 100vh;
   margin: auto;
   position: relative;
   display: flex;
@@ -62,38 +62,20 @@ button[type="submit"] {
   display: flex;
   width: 800px;
   flex-wrap: wrap;
-  margin: auto;
-  justify-content: center;
 }
 h2{
-  text-align: center;
-  clear: both;
-  display: inline-block;
   position: absolute;
-  margin-top: rem;
   color: rgb(255, 255, 255);
   font-size: 17px;
   margin-top: 90px;
 }
 #textDescription{
   position: absolute;
-  margin-top: 500px;
-  text-align: center;
+  margin-top: 14vh;
+  right: 90%;
+  width: 30%;
   color: rgb(0, 0, 0);
   font-size: 20px;
-
-}
-#characterImage{
-  opacity: 1;
-  object-fit: fill;
-  clear: both;
-  display:block;
-  flex: 33.33%;
-  float: left;
-  width: 100%x;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
 }
 .popup {
   position: fixed;
@@ -109,35 +91,14 @@ h2{
 img {
   margin-top: 60px;
   margin-bottom: 10px;
-  border: 5px black;
   padding: 20px;
   border-radius: 10%;
-  width: 70%;
-  height: 80%;
 }
 #login-popup{
   text-align: center;
   backdrop-filter: blur(5px);
   width: auto;
   height: auto;
-}
-.character img {
-  width: 400px;
-  height: 400px;
-  float: left;
-}
-/* .image-container:hover #characterImage  {
-  opacity: 0.3;
-} */
-.wrapperDiv {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;  
 }
 #back-button{
   position: absolute;
@@ -149,11 +110,7 @@ img {
   color: white;
   width: 100px;
 }
-.character-div{
-  object-fit: contain;
-}
-.image-caption{
-  text-align: center;
-  color: white;
+#characterImage:hover + #textDescription {
+  display: block;
 }
 
