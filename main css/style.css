@@ -121,4 +121,8 @@ img {
 p{
   position: relative;
   bottom: 10%;
+  display: block;
+}
+descriptionParagraph{
+  display: block;
 }

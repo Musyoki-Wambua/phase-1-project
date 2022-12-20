@@ -92,17 +92,19 @@ function searchCharacters(searchQuery) {
     });
 }
 
-// Add the hover effect to the character image
-function addHoverEffect(characterImage, descriptionParagraph) {
+// // Add the hover effect to the character image
+// function addHoverEffect(characterImage) {
 
-  // Add the mouseenter and mouseleave event listeners to the character image
-  characterImage.addEventListener("mouseenter", () => {
-    descriptionParagraph.style.display = "block";
-  });
-  characterImage.addEventListener("mouseleave", () => {
-    descriptionParagraph.style.display = "none";
-  });
-}
+//   const imageCaption =characterImage.nextElementSibling;
+
+//   // Add the mouseenter and mouseleave event listeners to the character image
+//   characterImage.addEventListener("mouseenter", () => {
+//     imageCaption.style.display = "block";
+//   });
+//   characterImage.addEventListener("mouseleave", () => {
+//     imageCaption.style.display = "none";
+//   });
+// }
 
 // Render the character data on the page
 function renderCharacter(character) {
@@ -129,19 +131,24 @@ function renderCharacter(character) {
   const wrapperDiv = document.createElement("div");
   wrapperDiv.style.clear = "left";
 
-  // Add the character image to the wrapper div element
+  // Add the character image to the wrapper div 
   wrapperDiv.innerHTML += `<img id= "characterImage"src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="${character.name}" style="float:left; width: 400px; height: 400px;">`;
 
   // Add the character description to the wrapper div element
-  const descriptionParagraph = document.createElement("p");
-  descriptionParagraph.id = "textDescription";
+
+  const imageCaption = document.createElement('div')
+  imageCaption.classList.add = 'image-caption';
+  imageCaption.innerText = character.description;
+  console.log(character.description)
+
   if (character.description) {
-    descriptionParagraph.innerText = character.description;
+    imageCaption.innerText = character.description;
   } else {
-    descriptionParagraph.innerText = `No description available`;
+    imageCaption.innerText = `No description available`;
   }
-  descriptionParagraph.style.display = "none";
-  wrapperDiv.appendChild(descriptionParagraph);
+  imageCaption.style.display = "block";
+
+  wrapperDiv.appendChild(imageCaption);
 
   // Add the character powers to the wrapper div element
   const powersParagraph = document.createElement("p");
@@ -155,8 +162,8 @@ function renderCharacter(character) {
   // Get the character image element
   const characterImage = wrapperDiv.querySelector("#characterImage");
 
-  // Add the hover effect to the character image
-  addHoverEffect(characterImage, descriptionParagraph);
+  // // Add the hover effect to the character image
+  // addHoverEffect(characterImage)
 
   // Append the wrapper div to the character div
   characterDiv.appendChild(wrapperDiv);
