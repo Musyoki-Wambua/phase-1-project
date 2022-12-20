@@ -135,7 +135,11 @@ function renderCharacter(character) {
   // Add the character description to the wrapper div element
   const descriptionParagraph = document.createElement("p");
   descriptionParagraph.id = "textDescription";
-  descriptionParagraph.innerText = character.description;
+  if (character.description) {
+    descriptionParagraph.innerText = character.description;
+  } else {
+    descriptionParagraph.innerText = `No description available`;
+  }
   descriptionParagraph.style.display = "none";
   wrapperDiv.appendChild(descriptionParagraph);
 
