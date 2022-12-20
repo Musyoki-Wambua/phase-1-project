@@ -120,9 +120,6 @@ function renderCharacter(character) {
   const characterDiv = document.createElement("div");
   characterDiv.id = 'character-div';
   characterDiv.classList.add("character");
-  characterDiv.style.width = "400px";
-  characterDiv.style.height = "400px";
-  characterDiv.style.clear = "left";
 
   // Add the character name to the div element
   characterDiv.innerHTML = `<h2 class= "heading">${character.name}</h2>`;
